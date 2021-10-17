@@ -17,8 +17,8 @@ public class MyServlet extends HttpServlet {
         ServletOutputStream outputStream = resp.getOutputStream();
         resp.setContentType("text/html");
         outputStream.println("<form action=\"post\">");
-        outputStream.println("    First name:<input type=\"text\" name=\"firstName\"/><br/>");
-        outputStream.println("    Last name:<input type=\"text\" name=\"lastName\"/><br/>");
+        outputStream.println("    First name:<input type=\"text\" name=\"firstName\"/><br>");
+        outputStream.println("    Last name:<input type=\"text\" name=\"lastName\"/><br>");
         outputStream.println("    <input type=\"submit\" value=\"Submit\"/>");
         outputStream.println("</form>");
 
