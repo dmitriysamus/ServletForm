@@ -14,8 +14,8 @@ public class MyServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
 
-        ServletOutputStream outputStream = resp.getOutputStream();
         resp.setContentType("text/html");
+        ServletOutputStream outputStream = resp.getOutputStream();
         outputStream.println("<form action=\"post\">");
         outputStream.println("    First name:<input type=\"text\" name=\"firstName\"/><br>");
         outputStream.println("    Last name:<input type=\"text\" name=\"lastName\"/><br>");
@@ -31,6 +31,8 @@ public class MyServlet extends HttpServlet {
             String element = attributeNames.nextElement();
             outputStream.println("FirstName: " + element + ", LastName: " + session.getValue(element) + "<br>");
         }
+
+        outputStream.flush();
         outputStream.close();
     }
 }
